@@ -499,13 +499,11 @@ a{ color:inherit; text-decoration:none; }
 @media (max-width: 980px){
   .grid-2, .grid-3{ grid-template-columns:1fr; }
   .module-grid{ grid-template-columns:repeat(2,1fr); }
-  .flagship-pair{ grid-template-columns:1fr; }
-  .flagship-card.navy{ border-radius:var(--radius-lg) var(--radius-lg) 0 0; }
-  .flagship-card.teal{ border-radius:0 0 var(--radius-lg) var(--radius-lg); }
-  .flagship-seam{ top:0; left:50%; width:64px; height:64px; }
-  .flagship-seam .half{ width:64px; height:32px; }
-  .flagship-seam .half.left{ border-radius:32px 32px 0 0; }
-  .flagship-seam .half.right{ border-radius:0 0 32px 32px; }
+  .flagship-pair{ grid-template-columns:1fr; gap:20px; }
+  .flagship-card{ min-height:auto; padding:38px 30px 34px; }
+  .flagship-card.navy{ border-radius:var(--radius-lg); }
+  .flagship-card.teal{ border-radius:var(--radius-lg); }
+  .flagship-seam{ display:none !important; }
   .leadmagnet{ grid-template-columns:1fr; padding:34px; }
   .audit-card{ flex-direction:column; text-align:center; }
   .process-steps{ grid-template-columns:1fr 1fr; }
@@ -551,6 +549,8 @@ a{ color:inherit; text-decoration:none; }
   .header-cta{ gap:6px; }
   .header-cta .btn-sm{ width:36px; height:36px; border-radius:9px; }
   .nav-toggle{ width:36px; height:36px; border-radius:9px; }
+  .flagship-card{ padding:30px 22px 28px; }
+  .flagship-card h3{ font-size:1.35rem; }
   h1{ font-size:1.75rem !important; }
 }
 
