@@ -10,9 +10,60 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
-
+<script>try{if(sessionStorage.getItem('formulabiz_splash_seen')){document.documentElement.classList.add('splash-already-seen');}}catch(e){}</script>
 </head>
 <body>
+<!-- Site Preloader Animation -->
+<div id="site-preloader" class="site-preloader" aria-hidden="true" title="Нажмите, чтобы пропустить">
+  <div class="splash-container">
+    <div class="logo-box">
+      <div id="flash" class="snap-flash"></div>
+      <svg id="logo-svg" class="logo-svg svg-shadow" viewBox="0 0 460 220" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="navyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#122C4D" />
+            <stop offset="100%" stop-color="#081527" />
+          </linearGradient>
+          <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#46C5BE" />
+            <stop offset="100%" stop-color="#2D9690" />
+          </linearGradient>
+        </defs>
+        <path id="piece-left" class="animate-left" fill="url(#navyGrad)" d="
+          M 90,40 
+          H 135 
+          A 16,16 0 0 0 167,40 
+          H 215 
+          V 80 
+          C 236,80 236,112 215,112 
+          V 160 
+          H 167 
+          C 167,181 135,181 135,160 
+          H 90 
+          Z
+        " />
+        <path id="piece-right" class="animate-right" fill="url(#tealGrad)" d="
+          M 215,40 
+          H 263 
+          C 263,19 295,19 295,40 
+          H 340 
+          V 160 
+          H 295 
+          C 295,181 263,181 263,160 
+          H 215 
+          V 112 
+          C 236,112 236,80 215,80 
+          Z
+        " />
+      </svg>
+    </div>
+    <div class="text-block">
+      <div id="brand-title" class="brand-title animate-title">Формула Бизнеса</div>
+      <div id="brand-subtitle" class="brand-subtitle animate-subtitle">Стратегический Консалтинг</div>
+    </div>
+  </div>
+</div>
+
 <header class="site-header">
   <div class="container">
     <a href="index.html" class="brand">

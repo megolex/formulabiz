@@ -1,6 +1,69 @@
 // Формула Бизнеса — shared behaviours
 
+// Immediate check before DOM ready to prevent any flicker on secondary page navigation
+(function () {
+  try {
+    if (sessionStorage.getItem('formulabiz_splash_seen')) {
+      document.documentElement.classList.add('splash-already-seen');
+    }
+  } catch (e) {}
+})();
+
 document.addEventListener('DOMContentLoaded', function () {
+  // Preloader / Splash Screen Animation Controller (Runs only on first visit per session)
+  var preloader = document.getElementById('site-preloader');
+  if (preloader) {
+    var hasSeenSplash = false;
+    try {
+      hasSeenSplash = !!sessionStorage.getItem('formulabiz_splash_seen');
+    } catch (e) {}
+
+    if (hasSeenSplash) {
+      // Already seen in this session -> remove immediately
+      preloader.style.display = 'none';
+      if (preloader.parentNode) {
+        preloader.parentNode.removeChild(preloader);
+      }
+    } else {
+      // First visit -> mark as seen and play animation
+      try {
+        sessionStorage.setItem('formulabiz_splash_seen', '1');
+      } catch (e) {}
+
+      document.body.classList.add('preloader-active');
+
+      // Trigger flash at 900ms when puzzle pieces snap together
+      var flash = document.getElementById('flash');
+      if (flash) {
+        setTimeout(function () {
+          flash.classList.add('active');
+        }, 900);
+      }
+
+      // Dismiss preloader smoothly after animation completes
+      var hidePreloader = function () {
+        if (!preloader.classList.contains('preloader-hidden')) {
+          preloader.classList.add('preloader-hidden');
+          document.body.classList.remove('preloader-active');
+          setTimeout(function () {
+            if (preloader.parentNode) {
+              preloader.style.display = 'none';
+            }
+          }, 700);
+        }
+      };
+
+      // Auto-hide after full logo reveal (~2.3s)
+      var dismissTimer = setTimeout(hidePreloader, 2300);
+
+      // Fast-skip on click / tap
+      preloader.addEventListener('click', function () {
+        clearTimeout(dismissTimer);
+        hidePreloader();
+      });
+    }
+  }
+
   // Mobile nav toggle
   var toggle = document.querySelector('.nav-toggle');
   var header = document.querySelector('.site-header');

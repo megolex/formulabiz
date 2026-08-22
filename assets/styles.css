@@ -547,3 +547,200 @@ a{ color:inherit; text-decoration:none; }
   .nav-toggle{ width:38px; height:38px; }
   h1{ font-size:1.7rem !important; }
 }
+
+/* ==========================================================================
+   Preloader / Splash Animation
+   ========================================================================== */
+html.splash-already-seen .site-preloader,
+.splash-already-seen .site-preloader {
+  display: none !important;
+}
+
+.site-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background-color: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s ease;
+  user-select: none;
+  cursor: pointer;
+}
+
+.site-preloader.preloader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+body.preloader-active {
+  overflow: hidden;
+}
+
+.splash-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.logo-box {
+  position: relative;
+  width: 320px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.logo-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.snap-flash {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #5CD6D0 0%, rgba(92, 214, 208, 0) 70%);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.snap-flash.active {
+  animation: flashPulse 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes puzzleSlideLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-150px, -35px) rotate(-18deg) scale(0.8);
+  }
+  70% {
+    transform: translate(6px, 1px) rotate(2deg) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes puzzleSlideRight {
+  0% {
+    opacity: 0;
+    transform: translate(150px, 35px) rotate(18deg) scale(0.8);
+  }
+  70% {
+    transform: translate(-6px, -1px) rotate(-2deg) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes flashPulse {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.3); }
+  40% { opacity: 0.95; transform: translate(-50%, -50%) scale(1.5); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(2.2); }
+}
+
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes subtitleReveal {
+  0% {
+    opacity: 0;
+    letter-spacing: 0.05em;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: 0.28em;
+    transform: translateY(0);
+  }
+}
+
+.animate-left {
+  animation: puzzleSlideLeft 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-right {
+  animation: puzzleSlideRight 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-title {
+  animation: titleReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
+}
+
+.animate-subtitle {
+  animation: subtitleReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.1s forwards;
+}
+
+.site-preloader .text-block {
+  margin-top: 0.5rem;
+}
+
+.site-preloader .brand-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  opacity: 0;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.site-preloader .brand-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--teal);
+  text-transform: uppercase;
+  margin-top: 0.4rem;
+  opacity: 0;
+}
+
+.svg-shadow {
+  filter: drop-shadow(0px 8px 16px rgba(8, 22, 40, 0.12));
+}
+
+@media (max-width: 480px) {
+  .logo-box {
+    width: 260px;
+    height: 130px;
+  }
+  .site-preloader .brand-title {
+    font-size: 1.6rem;
+  }
+  .site-preloader .brand-subtitle {
+    font-size: 0.65rem;
+  }
+}
