@@ -112,4 +112,61 @@ document.addEventListener('DOMContentLoaded', function () {
       leadForm.reset();
     });
   }
+
+  // FAQ Accordion Toggle
+  var faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = this.closest('.faq-item');
+      var isActive = item.classList.contains('active');
+      
+      // Close other items
+      document.querySelectorAll('.faq-item').forEach(function (other) {
+        other.classList.remove('active');
+      });
+      
+      // Toggle current item
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // Floating CTA Scroll Visibility
+  var floatingCta = document.getElementById('floating-cta');
+  if (floatingCta) {
+    var checkScroll = function () {
+      if (window.scrollY > 380) {
+        floatingCta.classList.add('visible');
+      } else {
+        floatingCta.classList.remove('visible');
+      }
+    };
+    window.addEventListener('scroll', checkScroll, { passive: true });
+    checkScroll();
+  }
+
+  // Scroll Reveal (Intersection Observer)
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(
+      function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -40px 0px', threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(function (el) {
+      revealObserver.observe(el);
+    });
+  } else {
+    // Fallback for older browsers
+    document.querySelectorAll('.reveal-on-scroll').forEach(function (el) {
+      el.classList.add('is-revealed');
+    });
+  }
 });
