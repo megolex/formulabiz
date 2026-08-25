@@ -82,7 +82,7 @@
     </nav>
     <div class="header-cta">
       <a href="tel:+375445278818" class="phone-link"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2C10 20 4 14 4 7a2 2 0 0 1 1-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg> +375 44 527 88 18</a>
-      <a href="tel:+375445278818" class="btn btn-teal btn-sm"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2C10 20 4 14 4 7a2 2 0 0 1 1-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><span class="btn-label">Позвонить</span></a>
+      <a href="tel:+375445278818" class="btn btn-teal btn-sm" title="Позвонить нам"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2C10 20 4 14 4 7a2 2 0 0 1 1-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="btn-label">Позвонить нам</span></a>
       <button class="nav-toggle" aria-label="Меню"><span></span></button>
     </div>
   </div>
@@ -125,7 +125,7 @@
     <div class="cta-band">
       <h2>Планируете открыть магазин?</h2>
       <p>Обсудим локацию, формат и шаги запуска — без ошибок и лишних потерь.</p>
-      <a href="tel:+375445278818" class="btn btn-teal" style="margin-top:18px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2C10 20 4 14 4 7a2 2 0 0 1 1-3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg> +375 44 527 88 18</a>
+      <a href="viber://chat?number=%2B375445278818" class="btn btn-teal" style="margin-top:18px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 0 1-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Написать нам</a>
     </div>
   </div>
 </section>
@@ -190,13 +190,81 @@
     </div>
   </div>
 </footer>
-<!-- Floating Quick Call / Consultation Button -->
-<a href="tel:+375445278818" id="floating-cta" class="floating-cta" aria-label="Быстрый звонок в Формулу Бизнеса">
+<!-- Floating Contact Widget Button -->
+<button type="button" id="floating-cta" class="floating-cta" aria-label="Связаться с нами" title="Связаться с нами">
   <div class="floating-cta-icon">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2C10 20 4 14 4 7a2 2 0 0 1 1-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 0 1-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
-  <span>Позвонить нам</span>
-</a>
+  <span>Связаться с нами</span>
+</button>
+
+<!-- Quick Contact Popup -->
+<div id="chat-stub" class="chat-widget-stub" aria-hidden="true" role="region" aria-label="Связаться с нами">
+  <div class="chat-stub-header">
+    <div class="chat-stub-header-info">
+      <div class="chat-stub-avatar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 0 1-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <div class="chat-stub-title">Формула Бизнеса</div>
+        <div class="chat-stub-status">Консультация эксперта</div>
+      </div>
+    </div>
+    <button type="button" class="chat-stub-close" aria-label="Закрыть окно">✕</button>
+  </div>
+  <div class="chat-stub-body">
+    <p style="margin:0 0 14px; font-size:.88rem; color:var(--navy); font-weight:500;">Выберите удобный способ связи с нашим экспертом:</p>
+    <div class="chat-stub-actions">
+      <a href="viber://chat?number=%2B375445278818" class="chat-stub-btn viber">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 0 1-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Написать в Viber
+      </a>
+      <button type="button" class="chat-stub-btn callback" data-open-modal="callback-modal">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2C10 20 4 14 4 7a2 2 0 0 1 1-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        Заказать звонок
+      </button>
+    </div>
+    <div class="chat-stub-footer">Прямая связь с ведущими консультантами</div>
+  </div>
+</div>
+
+<!-- Callback Modal Form -->
+<div id="callback-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-card">
+    <button type="button" class="modal-close" aria-label="Закрыть модальное окно">✕</button>
+    <div id="modal-form-wrap">
+      <div class="modal-header">
+        <span class="modal-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2"/></svg> Экспресс-связь</span>
+        <h3 id="modal-title">Заказать обратный звонок</h3>
+        <p>Оставьте номер, и наш ведущий эксперт перезвонит вам в течение 15 минут в рабочее время.</p>
+      </div>
+      <form id="callback-form" class="modal-form">
+        <div class="field">
+          <label for="cb-name">Ваше имя</label>
+          <input id="cb-name" name="name" type="text" placeholder="Как к вам обращаться" required>
+        </div>
+        <div class="field">
+          <label for="cb-phone">Номер телефона</label>
+          <input id="cb-phone" name="phone" type="tel" placeholder="+375 __ ___ __ __" required>
+        </div>
+        <div class="field">
+          <label for="cb-comment">Что вас интересует (необязательно)</label>
+          <textarea id="cb-comment" name="comment" placeholder="Например: аудит магазина, проверки МАРТ, открытие под ключ..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-teal btn-block" style="padding:14px; font-size:.95rem;">Заказать звонок</button>
+        <p class="form-note" style="margin-top:12px; font-size:.75rem; text-align:center; color:var(--text-light);">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
+      </form>
+    </div>
+    <div id="modal-success-wrap" class="modal-success">
+      <div class="modal-success-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h3>Заявка принята!</h3>
+      <p>Спасибо за обращение. Мы перезвоним вам в самое ближайшее время.</p>
+      <button type="button" class="btn btn-teal btn-block modal-success-close" style="margin-top:20px;">Понятно</button>
+    </div>
+  </div>
+</div>
 
 <script src="assets/main.js"></script>
 </body>
