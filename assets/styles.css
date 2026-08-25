@@ -1646,6 +1646,8 @@ body.preloader-active {
   border-radius:18px;
   padding:26px;
   margin-bottom:24px;
+  width:100%;
+  max-width:100%;
 }
 .quiz-result-top{
   display:flex;
@@ -1665,6 +1667,8 @@ body.preloader-active {
   display:inline-flex;
   align-items:center;
   gap:6px;
+  max-width:100%;
+  white-space:normal;
 }
 .quiz-risk-badge.high{
   background:rgba(239,68,68,0.2);
@@ -1690,18 +1694,29 @@ body.preloader-active {
   grid-template-columns:1fr 1fr;
   gap:12px;
   margin-top:16px;
+  width:100%;
 }
 .quiz-lead-form .field{
   margin-bottom:0;
+  width:100%;
 }
 .quiz-lead-form input{
   background:rgba(255,255,255,0.92);
   color:var(--navy);
   border:1px solid rgba(255,255,255,0.3);
+  width:100%;
+  max-width:100%;
 }
 .quiz-lead-form .btn-submit-quiz{
   grid-column:1 / -1;
   margin-top:6px;
+  white-space:normal;
+  text-align:center;
+  line-height:1.35;
+  padding:14px 18px;
+  width:100%;
+  max-width:100%;
+  word-break:break-word;
 }
 
 /* --------------------------------- Lead Magnet Success Box --------------------------------- */
@@ -1761,7 +1776,56 @@ body.preloader-active {
 }
 
 @media (max-width:760px){
-  .quiz-wrapper{ padding:30px 20px; }
-  .quiz-options-grid{ grid-template-columns:1fr; }
-  .quiz-lead-form{ grid-template-columns:1fr; }
+  .quiz-wrapper{
+    padding:28px 18px;
+    border-radius:var(--radius-md);
+  }
+  .quiz-header h2{
+    font-size:1.45rem;
+  }
+  .quiz-options-grid{
+    grid-template-columns:1fr;
+  }
+  .quiz-lead-form{
+    grid-template-columns:1fr;
+  }
+  .quiz-result-card{
+    padding:20px 16px;
+  }
+  .quiz-result-top{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+  .btn-submit-quiz{
+    font-size:.90rem;
+    padding:13px 16px;
+  }
+}
+
+@media (max-width:480px){
+  .container{
+    padding:0 14px;
+  }
+  .quiz-wrapper{
+    padding:20px 14px;
+    border-radius:16px;
+  }
+  .quiz-header h2{
+    font-size:1.25rem;
+  }
+  .quiz-step-title{
+    font-size:1.02rem;
+  }
+  .quiz-option{
+    padding:12px 14px;
+    font-size:.88rem;
+  }
+  .quiz-result-card{
+    padding:16px 12px;
+  }
+  .btn-submit-quiz{
+    font-size:.86rem;
+    padding:12px 14px;
+  }
 }
