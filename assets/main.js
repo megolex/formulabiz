@@ -797,7 +797,7 @@ document.addEventListener('DOMContentLoaded', function () {
             '</svg>' +
           '</div>' +
           '<div class="cookie-bar-text">' +
-            'Мы используем файлы cookie для персонализации сервисов и удобства пользователей. Продолжая использовать сайт, вы соглашаетесь с условиями сбора cookie и <a href="assets/politika-obrabotki-dannyh.pdf" target="_blank" rel="noopener noreferrer" class="cookie-policy-link">Политикой обработки персональных данных</a>.' +
+            'Мы используем файлы cookie для удобства и аналитики. Оставаясь на сайте, вы соглашаетесь с <a href="assets/politika-obrabotki-dannyh.pdf" target="_blank" rel="noopener noreferrer" class="cookie-policy-link">Политикой обработки данных</a>.' +
           '</div>' +
         '</div>' +
         '<div class="cookie-bar-actions">' +
